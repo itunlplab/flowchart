@@ -1,0 +1,120 @@
+{
+  "title": "Representative Bilingual Failure Cases",
+  "description": "Three observed EN/TR error pairs across Applied Scenario, Topological, and Fact Retrieval questions. Same flowchart, question ID and model within each pair.",
+  "cases": [
+    {
+      "id": "wiki00416_3",
+      "title": "Incorrect next step",
+      "one_line": "The model suggests a different action instead of monitoring the dog’s condition.",
+      "summary": "The model selects an action other than continued monitoring, which is the next step specified by the references. English and Turkish answers diverge from the same intended action.",
+      "label": "Applied Scenario",
+      "domain": "Wiki",
+      "number": "01",
+      "chart": "wiki00416",
+      "type": "applied_scenario",
+      "model": "InternVL3-14B",
+      "languages": [
+        {
+          "language": "EN",
+          "question": "Craig's dog, Whiskers, has been on ACE inhibitors for a few weeks to treat kidney disease. However, Craig has noticed no improvement in Whiskers' condition and is concerned about the potential worsening of kidney failure. What should be Craig's next step according to the treatment process?",
+          "model_prediction": "Seek alternative medications for dogs",
+          "reference_answers": [
+            "Craig should monitor Whiskers' condition to ensure the treatment with ACE inhibitors is not worsening the kidney failure.",
+            "He should continue to keep an eye on Whiskers' health to determine if the ACE inhibitors are having a negative impact on the kidney disease.",
+            "Craig's next step is to closely observe Whiskers to confirm that the ACE inhibitor treatment isn't exacerbating the kidney failure."
+          ],
+          "image": "assets/failure-cases/wiki00416-en.png",
+          "preview_image": "assets/failure-cases/wiki00416-en-preview.webp"
+        },
+        {
+          "language": "TR",
+          "question": "Craig’in köpeği Whiskers, böbrek hastalığı için birkaç haftadır ACE inhibitörleri kullanıyor. Craig bir düzelme görmedi ve böbrek yetmezliğinin kötüleşmesinden endişe ediyor. Tedavi sürecine göre Craig’in bir sonraki adımı ne olmalı?",
+          "model_prediction": "Veterinerin endikasyon dışı reçete edip etmediğini kontrol et",
+          "reference_answers": [
+            "ACE inhibitörü tedavisinin böbrek yetmezliğini kötüleştirmediğinden emin olmak için Whiskers’ın durumunu izlemeli.",
+            "ACE inhibitörlerinin böbrek hastalığına olumsuz etkisi olup olmadığını anlamak için sağlık durumunu takip etmeye devam etmeli.",
+            "ACE inhibitörü tedavisinin böbrek yetmezliğini artırmadığını doğrulamak için Whiskers’ı yakından gözlemlemeli."
+          ],
+          "image": "assets/failure-cases/wiki00416-tr.png",
+          "preview_image": "assets/failure-cases/wiki00416-tr-preview.webp"
+        }
+      ]
+    },
+    {
+      "id": "code00433_6",
+      "title": "Node-count discrepancy",
+      "one_line": "The model reports 9 nodes although the flowchart contains 11.",
+      "summary": "Both language versions receive the same incorrect prediction: nine nodes instead of eleven. This is a descriptive counting error, not a claim about why the error occurred.",
+      "label": "Topological",
+      "domain": "Code",
+      "number": "02",
+      "chart": "code00433",
+      "type": "topological",
+      "model": "InternVL3.5-14B",
+      "languages": [
+        {
+          "language": "EN",
+          "question": "How many nodes exist in the given flowchart?",
+          "model_prediction": "9",
+          "reference_answers": [
+            "11",
+            "The flowchart contains eleven nodes.",
+            "Eleven Nodes"
+          ],
+          "image": "assets/failure-cases/code00433-en.png",
+          "preview_image": "assets/failure-cases/code00433-en-preview.webp"
+        },
+        {
+          "language": "TR",
+          "question": "Verilen akış şemasında kaç düğüm vardır?",
+          "model_prediction": "9",
+          "reference_answers": [
+            "11",
+            "Akış şemasında on bir düğüm vardır.",
+            "On Bir Düğüm"
+          ],
+          "image": "assets/failure-cases/code00433-tr.png",
+          "preview_image": "assets/failure-cases/code00433-tr-preview.webp"
+        }
+      ]
+    },
+    {
+      "id": "wiki01152_1",
+      "title": "Wrong action on an unmet condition",
+      "one_line": "The model skips the recommended consultation step when goals have not been visualized and set.",
+      "summary": "For the No branch of “Goals visualized and set?”, the flowchart returns to discussing life goals with a counselor or mentor. The English output instead names a later visualization step, while the Turkish output names working toward already visualized goals.",
+      "label": "Fact Retrieval",
+      "domain": "Wiki",
+      "number": "03",
+      "chart": "wiki01152",
+      "type": "fact_retrieval",
+      "model": "InternVL3-14B",
+      "languages": [
+        {
+          "language": "EN",
+          "question": "What is the suggested course of action if goals have not been visualized and set?",
+          "model_prediction": "Create a clear mental image of your desired future",
+          "reference_answers": [
+            "Discuss life direction and goals with a counselor or mentor.",
+            "Talk about life goals with a mentor or counselor.",
+            "Confer with a mentor or counselor about the direction and objectives of one's life."
+          ],
+          "image": "assets/failure-cases/wiki01152-en.png",
+          "preview_image": "assets/failure-cases/wiki01152-en-preview.webp"
+        },
+        {
+          "language": "TR",
+          "question": "Hedefler görselleştirilip belirlenmediyse önerilen eylem nedir?",
+          "model_prediction": "Görüntülediğin hedeflere kararlılıkla çalış",
+          "reference_answers": [
+            "Yaşam yönünü ve hedefleri bir danışman veya mentörle tartış.",
+            "Hedefler hakkında bir mentör veya danışmanla konuş.",
+            "Yaşamının yönü ve amaçları konusunda bir mentör veya danışmanla istişare et."
+          ],
+          "image": "assets/failure-cases/wiki01152-tr.png",
+          "preview_image": "assets/failure-cases/wiki01152-tr-preview.webp"
+        }
+      ]
+    }
+  ]
+}

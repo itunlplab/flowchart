@@ -1,0 +1,183 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+}
+
+.container {
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.authors, .affiliations {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.links {
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+.button {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #111;
+  color: white;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #444;
+}
+
+section {
+  margin-top: 60px;
+}
+
+h2 {
+  font-size: 26px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.figure {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.caption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+}
+
+.highlight-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlight-list li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.bibtex-box {
+  position: relative;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.bibtex-box button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #222;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+/* FlowVQA-R representative failure case panels — adapted to the original project-page style */
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { line-height: 1.6; }
+.container { max-width: 1080px; margin: 36px auto 60px; padding: 18px 24px; }
+.site-heading { text-align: center; }
+.title { font-size: clamp(34px,4.5vw,48px); line-height:1.15; margin: 0 0 5px; letter-spacing:-.035em; }
+.site-subtitle { font-size: clamp(19px, 3vw, 26px); font-weight: 600; text-align: center; margin: 12px 0 5px; }
+.site-byline { text-align: center; color: #505050; font-size: 14px; margin: 4px 0; }
+.site-intro { max-width: 770px; margin: 22px auto 0; line-height:1.75; text-align:center; color:#444; }
+.case-shortcuts { display:flex; justify-content:center; gap: 10px; flex-wrap:wrap; margin: 26px 0 0; }
+.case-shortcuts a { border:1px solid #d9d9d9; background:#fff; border-radius:6px; padding: 9px 14px; text-decoration:none; color:#222; font-weight:600; font-size:13px; }
+.case-shortcuts a:hover { background:#f3f3f3; }
+.case-shortcuts a:focus-visible, .diagram-tools a:focus-visible, summary:focus-visible { outline:3px solid #5b5b5b; outline-offset:2px; }
+.case-section { margin-top: 48px; scroll-margin-top:25px; }
+.case-section + .case-section { border-top:1px solid #e8e8e8; padding-top:26px; }
+.case-topline { text-transform:uppercase; letter-spacing:.10em; font-weight:700; font-size:12px; color:#666; }
+.case-header { display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap; margin:6px 0 6px; }
+.case-header h2 { border:0; margin:0; padding:0; font-size:clamp(21px,3vw,27px); }
+.case-model { color:#444; font-size:13px; background:#f2f2f2; border-radius:6px; padding:7px 10px; }
+.case-description { margin: 10px 0 19px; text-align:left; color:#484848; }
+.case-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start; }
+.case-card { border:1px solid #e1e1e1; background:#fff; border-radius:10px; overflow:hidden; min-width:0; }
+.language-heading { display:flex; justify-content:space-between; align-items:center; background:#fafafa; padding:11px 15px; border-bottom:1px solid #e7e7e7; }
+.language-heading h3 { font-size:17px; margin:0; }
+.language-code { font-size:12px; color:#666; font-weight:600; }
+.diagram-preview { background:#fff; height:350px; overflow-y:auto; padding:10px 12px 2px; scrollbar-gutter:stable; }
+.diagram-preview img { width:100%; height:auto; display:block; margin:0 auto; }
+.diagram-tools { background:#fafafa; border-top:1px solid #e7e7e7; border-bottom:1px solid #e7e7e7; padding:7px 12px; display:flex;justify-content:space-between; gap:8px;flex-wrap:wrap; font-size:12px;color:#666; }
+.diagram-tools a { color:#262626; font-weight:600; }
+.case-content { padding:15px; }
+.field-label { display:block; font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:#666; }
+.question-text { margin:6px 0 18px; font-weight:600; text-align:left;overflow-wrap:anywhere; }
+.answer-boxes { display:grid;grid-template-columns:1fr 1fr; gap:10px; }
+.answer-box { padding:10px 11px; border-radius:6px;min-width:0; }
+.answer-box p { margin:7px 0 0; font-weight:600; text-align:left;overflow-wrap:anywhere; font-size:14px; }
+.answer-box.is-wrong { background:#fff7f7;border:1px solid #efd4d4; }
+.answer-box.is-right { background:#f6faf7;border:1px solid #d5e6d9; }
+.answer-box.is-wrong p { color:#852b2b; }
+.answer-box.is-right p { color:#1e5b3a; }
+.reference-details { border:1px solid #e2e2e2; border-radius:6px; margin-top:12px; }
+.reference-details summary { padding:10px 11px; cursor:pointer; font-weight:600; font-size:13px; }
+.reference-details ol { margin:0; padding:9px 16px 12px 32px; border-top:1px solid #ededed; }
+.reference-details li { margin:5px 0;overflow-wrap:anywhere;font-size:13px; }
+.case-note { margin-top:15px; padding:15px 17px; border-left:3px solid #555; border-radius:4px; background:#fafafa; }
+.case-note p { text-align:left; margin:5px 0 0; }
+.disclaimer { margin:38px 0 0; padding:15px 17px; border:1px solid #e8e8e8; border-radius:7px; background:#fafafa; font-size:13px; color:#555; }
+.disclaimer p { text-align:left; margin:0; }
+footer { margin-top:55px; border-top:1px solid #e7e7e7; padding-top:18px; }
+footer p { text-align:center; }
+@media (max-width: 768px) { .container {margin-top:22px;padding:16px;} .case-grid {grid-template-columns:1fr;} .diagram-preview {height:340px;} .case-section {margin-top:35px;} }
+@media (max-width: 450px) { .container {padding:12px;} .answer-boxes{grid-template-columns:1fr;} .diagram-preview{height:300px;} .case-card{border-radius:8px;} .case-header{align-items:flex-start;} }

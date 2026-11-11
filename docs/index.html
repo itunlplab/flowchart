@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three representative English–Turkish failure cases from FlowVQA-R, with flowcharts, questions, model predictions and reference answers.">
+  <title>Representative Failure Cases | FlowVQA-R</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+  <header class="site-heading">
+    <h1 class="title">FlowVQA-R</h1>
+    <p class="site-subtitle">Representative Bilingual Failure Cases</p>
+    <p class="site-intro">Three illustrative model errors on aligned English and Turkish flowcharts. Each case pairs the same flowchart, question ID and model across the two languages and presents the model predictions alongside their reference answers.</p>
+    <nav class="case-shortcuts" aria-label="Jump to failure example">
+      <a href="#wiki00416_3">01 · Applied Scenario</a>
+      <a href="#code00433_6">02 · Topological</a>
+      <a href="#wiki01152_1">03 · Fact Retrieval</a>
+    </nav>
+  </header>
+  <section class="case-section" id="wiki00416_3" aria-labelledby="heading-wiki00416_3">
+    <div class="case-topline">Case 01 · Applied Scenario · Wiki</div>
+    <div class="case-header"><h2 id="heading-wiki00416_3">Incorrect next step</h2><span class="case-model">InternVL3-14B · wiki00416_3</span></div>
+    <p class="case-description">The model suggests a different action instead of monitoring the dog’s condition.</p>
+    <div class="case-grid">
+      <article class="case-card" lang="en">
+        <div class="language-heading"><h3>English</h3><span class="language-code">EN</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="English flowchart, scrollable">
+          <a href="assets/failure-cases/wiki00416-en.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/wiki00416-en-preview.webp" alt="Flowchart wiki00416 (English)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/wiki00416-en.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Question</span><p class="question-text">Craig&#x27;s dog, Whiskers, has been on ACE inhibitors for a few weeks to treat kidney disease. However, Craig has noticed no improvement in Whiskers&#x27; condition and is concerned about the potential worsening of kidney failure. What should be Craig&#x27;s next step according to the treatment process?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model prediction ✕</span><p>Seek alternative medications for dogs</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>Craig should monitor Whiskers&#x27; condition to ensure the treatment with ACE inhibitors is not worsening the kidney failure.</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>Craig should monitor Whiskers&#x27; condition to ensure the treatment with ACE inhibitors is not worsening the kidney failure.</li><li>He should continue to keep an eye on Whiskers&#x27; health to determine if the ACE inhibitors are having a negative impact on the kidney disease.</li><li>Craig&#x27;s next step is to closely observe Whiskers to confirm that the ACE inhibitor treatment isn&#x27;t exacerbating the kidney failure.</li></ol></details>
+        </div>
+      </article>
+      <article class="case-card" lang="tr">
+        <div class="language-heading"><h3>Turkish</h3><span class="language-code">TR</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="Türkçe flowchart, scrollable">
+          <a href="assets/failure-cases/wiki00416-tr.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/wiki00416-tr-preview.webp" alt="Flowchart wiki00416 (Türkçe)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/wiki00416-tr.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Questıon</span><p class="question-text">Craig’in köpeği Whiskers, böbrek hastalığı için birkaç haftadır ACE inhibitörleri kullanıyor. Craig bir düzelme görmedi ve böbrek yetmezliğinin kötüleşmesinden endişe ediyor. Tedavi sürecine göre Craig’in bir sonraki adımı ne olmalı?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model predıctıon ✕</span><p>Veterinerin endikasyon dışı reçete edip etmediğini kontrol et</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>ACE inhibitörü tedavisinin böbrek yetmezliğini kötüleştirmediğinden emin olmak için Whiskers’ın durumunu izlemeli.</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>ACE inhibitörü tedavisinin böbrek yetmezliğini kötüleştirmediğinden emin olmak için Whiskers’ın durumunu izlemeli.</li><li>ACE inhibitörlerinin böbrek hastalığına olumsuz etkisi olup olmadığını anlamak için sağlık durumunu takip etmeye devam etmeli.</li><li>ACE inhibitörü tedavisinin böbrek yetmezliğini artırmadığını doğrulamak için Whiskers’ı yakından gözlemlemeli.</li></ol></details>
+        </div>
+      </article>
+    </div>
+    <aside class="case-note"><span class="field-label">Observed error</span><p>The model selects an action other than continued monitoring, which is the next step specified by the references. English and Turkish answers diverge from the same intended action.</p></aside>
+  </section>
+
+  <section class="case-section" id="code00433_6" aria-labelledby="heading-code00433_6">
+    <div class="case-topline">Case 02 · Topological · Code</div>
+    <div class="case-header"><h2 id="heading-code00433_6">Node-count discrepancy</h2><span class="case-model">InternVL3.5-14B · code00433_6</span></div>
+    <p class="case-description">The model reports 9 nodes although the flowchart contains 11.</p>
+    <div class="case-grid">
+      <article class="case-card" lang="en">
+        <div class="language-heading"><h3>English</h3><span class="language-code">EN</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="English flowchart, scrollable">
+          <a href="assets/failure-cases/code00433-en.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/code00433-en-preview.webp" alt="Flowchart code00433 (English)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/code00433-en.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Question</span><p class="question-text">How many nodes exist in the given flowchart?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model prediction ✕</span><p>9</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>11</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>11</li><li>The flowchart contains eleven nodes.</li><li>Eleven Nodes</li></ol></details>
+        </div>
+      </article>
+      <article class="case-card" lang="tr">
+        <div class="language-heading"><h3>Turkish</h3><span class="language-code">TR</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="Türkçe flowchart, scrollable">
+          <a href="assets/failure-cases/code00433-tr.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/code00433-tr-preview.webp" alt="Flowchart code00433 (Türkçe)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/code00433-tr.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Questıon</span><p class="question-text">Verilen akış şemasında kaç düğüm vardır?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model predıctıon ✕</span><p>9</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>11</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>11</li><li>Akış şemasında on bir düğüm vardır.</li><li>On Bir Düğüm</li></ol></details>
+        </div>
+      </article>
+    </div>
+    <aside class="case-note"><span class="field-label">Observed error</span><p>Both language versions receive the same incorrect prediction: nine nodes instead of eleven. This is a descriptive counting error, not a claim about why the error occurred.</p></aside>
+  </section>
+
+  <section class="case-section" id="wiki01152_1" aria-labelledby="heading-wiki01152_1">
+    <div class="case-topline">Case 03 · Fact Retrieval · Wiki</div>
+    <div class="case-header"><h2 id="heading-wiki01152_1">Wrong action on an unmet condition</h2><span class="case-model">InternVL3-14B · wiki01152_1</span></div>
+    <p class="case-description">The model skips the recommended consultation step when goals have not been visualized and set.</p>
+    <div class="case-grid">
+      <article class="case-card" lang="en">
+        <div class="language-heading"><h3>English</h3><span class="language-code">EN</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="English flowchart, scrollable">
+          <a href="assets/failure-cases/wiki01152-en.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/wiki01152-en-preview.webp" alt="Flowchart wiki01152 (English)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/wiki01152-en.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Question</span><p class="question-text">What is the suggested course of action if goals have not been visualized and set?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model prediction ✕</span><p>Create a clear mental image of your desired future</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>Discuss life direction and goals with a counselor or mentor.</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>Discuss life direction and goals with a counselor or mentor.</li><li>Talk about life goals with a mentor or counselor.</li><li>Confer with a mentor or counselor about the direction and objectives of one&#x27;s life.</li></ol></details>
+        </div>
+      </article>
+      <article class="case-card" lang="tr">
+        <div class="language-heading"><h3>Turkish</h3><span class="language-code">TR</span></div>
+        <div class="diagram-preview" role="region" tabindex="0" aria-label="Türkçe flowchart, scrollable">
+          <a href="assets/failure-cases/wiki01152-tr.png" target="_blank" rel="noopener noreferrer" title="Open original flowchart in a new tab"><img src="assets/failure-cases/wiki01152-tr-preview.webp" alt="Flowchart wiki01152 (Türkçe)" loading="lazy" decoding="async"></a>
+        </div>
+        <div class="diagram-tools"><span>Scroll to explore the diagram</span><a href="assets/failure-cases/wiki01152-tr.png" target="_blank" rel="noopener noreferrer">Open full-resolution image ↗</a></div>
+        <div class="case-content">
+          <span class="field-label">Questıon</span><p class="question-text">Hedefler görselleştirilip belirlenmediyse önerilen eylem nedir?</p>
+          <div class="answer-boxes">
+            <div class="answer-box is-wrong"><span class="field-label">Model predıctıon ✕</span><p>Görüntülediğin hedeflere kararlılıkla çalış</p></div>
+            <div class="answer-box is-right"><span class="field-label">Reference answer (A1)</span><p>Yaşam yönünü ve hedefleri bir danışman veya mentörle tartış.</p></div>
+          </div>
+          <details class="reference-details"><summary>Show all three reference answers</summary><ol><li>Yaşam yönünü ve hedefleri bir danışman veya mentörle tartış.</li><li>Hedefler hakkında bir mentör veya danışmanla konuş.</li><li>Yaşamının yönü ve amaçları konusunda bir mentör veya danışmanla istişare et.</li></ol></details>
+        </div>
+      </article>
+    </div>
+    <aside class="case-note"><span class="field-label">Observed error</span><p>For the No branch of “Goals visualized and set?”, the flowchart returns to discussing life goals with a counselor or mentor. The English output instead names a later visualization step, while the Turkish output names working toward already visualized goals.</p></aside>
+  </section>
+  <aside class="disclaimer" aria-label="Interpretation note"><p><strong>Interpretation note.</strong> These examples illustrate disagreements between observed model predictions and the verified reference answers. They should not be interpreted as evidence identifying a unique cause of failure, such as text recognition, translation, or graph reasoning. The examples are qualitative and are not intended to summarize overall benchmark performance.</p></aside>
+  <footer><p>© 2026 ITUNLP Lab · FlowVQA-R</p></footer>
+</main>
+</body>
+</html>
